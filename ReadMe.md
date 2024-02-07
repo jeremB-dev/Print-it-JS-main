@@ -1,6 +1,6 @@
 # Print-It
 
-<img src="assets/images/Print it.png" alt="screenshot du carrousel>
+<img alt="screenshot du carrousel" src="./assets/images/Print it.png" >
 
 La mission était de dynamiser un site internet statique en y intégrant un carrousel dynamique.
 
