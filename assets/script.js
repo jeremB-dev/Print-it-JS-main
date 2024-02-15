@@ -33,6 +33,6 @@ left.addEventListener("click", () => {
 
 let right = document.querySelector('.arrow_right');
 
-left.addEventListener("click", () => {
+right.addEventListener("click", () => {
 	console.log("Cliquer à droite")
 });
