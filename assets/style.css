@@ -127,12 +127,15 @@ header {
 	position: absolute;
 	border: none;
 	background: none;
+	cursor: pointer;
 }
 #banner .arrow_left {
-	left: 10px;
+	left: 50px;
+	
 }
 #banner .arrow_right {
-	right: 10px;
+	right: 50px;
+	
 }
 /* Gestion des points du carrousel */
 .dots {
