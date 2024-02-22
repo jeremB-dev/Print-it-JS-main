@@ -18,25 +18,50 @@ const slides = [
   },
 ];
 
+const basePath = "./assets/images/slideshow/"; //selection du chemin pour les imgs
+const banner = document.getElementById("banner"); // selection de l'ID banner
+const bannerImg = document.querySelector(".banner-img"); // selection de la classe .banner-img
+const tagLine = document.querySelector("#banner p"); //selection de la classe p du parent #banner
 
-const basePath = "./assets/images/slideshow/";
-const banner = document.getElementById("banner");
-const bannerImg = document.createElement("img");
-bannerImg.setAttribute("src", basePath + slides[0].image);
-banner.appendChild(bannerImg);
 
-//EventListeners pour flèche gauche
+let position = 0;
+const numberOfSlide = slides.length;
 
+createDots();
+updateDot();
+
+
+//addEventListener fleche de gauche
 const left = document.querySelector(".arrow_left");
-
 left.addEventListener("click", () => {
   console.log("Cliquer à gauche");
 });
-
-//EventListeners pour flèche droite
-
+ 
+//addEventListener fleche de droite
 const right = document.querySelector(".arrow_right");
-
 right.addEventListener("click", () => {
   console.log("Cliquer à droite");
 });
+
+// creation des points indicateurs
+function createDots() {
+  const dots = document.querySelector(".dots");
+  for (let index = 0; index < slides.length; index++) {
+    const dot = document.createElement("div");
+    dot.setAttribute("class", "dot");
+    dots.appendChild(dot);
+  }
+}
+
+// fonction indication point actuel
+function updateDot() {
+  const listPoints = document.querySelectorAll(".dot");
+  for (let index = 0; index < listPoints.length; index++) {
+    const dot = listPoints[index];
+    if (index == position) {
+      dot.classList.add("dot_selected");
+    } else {
+      dot.classList.remove("dot_selected");
+    }
+  }
+}

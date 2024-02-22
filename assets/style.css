@@ -130,11 +130,11 @@ header {
 	cursor: pointer;
 }
 #banner .arrow_left {
-	left: 50px;
+	left: 10px;
 	
 }
 #banner .arrow_right {
-	right: 50px;
+	right: 10px;
 	
 }
 /* Gestion des points du carrousel */
