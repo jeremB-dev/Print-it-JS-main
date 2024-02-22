@@ -25,10 +25,6 @@ const tagLine = document.querySelector("#banner p"); //selection de la classe p 
 
 
 let position = 0;
-const numberOfSlide = slides.length;
-
-createDots();
-updateDot();
 
 
 //addEventListener fleche de gauche
