@@ -18,25 +18,38 @@ const slides = [
   },
 ];
 
+// selection lien img, ID et classe
 const basePath = "./assets/images/slideshow/"; //selection du chemin pour les imgs
 const banner = document.getElementById("banner"); // selection de l'ID banner
 const bannerImg = document.querySelector(".banner-img"); // selection de la classe .banner-img
 const tagLine = document.querySelector("#banner p"); //selection de la classe p du parent #banner
-
+const sliderImg = document.getElementById("slider-img");
+sliderImg.setAttribute("src", basePath + slides[0].image);
+const sliderText = document.getElementById("slider-text");
+sliderText.innerHTML = slides[0].tagLine;
 
 let position = 0;
-
+createDots();
+updateDot(position);
 
 //addEventListener fleche de gauche
 const left = document.querySelector(".arrow_left");
 left.addEventListener("click", () => {
-  console.log("Cliquer à gauche");
+  //console.log("Cliquer à gauche");
+  position = position - 1;
+  sliderImg.setAttribute("src", basePath + slides[position].image);
+  sliderText.innerHTML = slides[position].tagLine;
+  updateDot();
 });
- 
+
 //addEventListener fleche de droite
 const right = document.querySelector(".arrow_right");
 right.addEventListener("click", () => {
-  console.log("Cliquer à droite");
+  //console.log("Cliquer à droite");
+  position = position + 1;
+  sliderImg.setAttribute("src", basePath + slides[position].image);
+  sliderText.innerHTML = slides[position].tagLine;
+  updateDot();
 });
 
 // creation des points indicateurs
