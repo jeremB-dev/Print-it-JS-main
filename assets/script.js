@@ -35,8 +35,11 @@ updateDot(position);
 //addEventListener fleche de gauche
 const left = document.querySelector(".arrow_left");
 left.addEventListener("click", () => {
-  //console.log("Cliquer à gauche");
-  position = position - 1;
+  if (position === 0) {
+    position = slides.length - 1;
+  } else {
+    position = position - 1;
+  }
   sliderImg.setAttribute("src", basePath + slides[position].image);
   sliderText.innerHTML = slides[position].tagLine;
   updateDot();
@@ -45,8 +48,11 @@ left.addEventListener("click", () => {
 //addEventListener fleche de droite
 const right = document.querySelector(".arrow_right");
 right.addEventListener("click", () => {
-  //console.log("Cliquer à droite");
-  position = position + 1;
+  if (position === slides.length - 1) {
+    position = 0;
+  } else {
+    position = position + 1;
+  }
   sliderImg.setAttribute("src", basePath + slides[position].image);
   sliderText.innerHTML = slides[position].tagLine;
   updateDot();
