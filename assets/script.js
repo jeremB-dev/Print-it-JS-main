@@ -65,8 +65,9 @@ right.addEventListener("click", () => {
   updateDot();
 });
 
+
 // fonction creation des points indicateurs
-function createDots() {
+const createDots = () => {
   const dots = document.querySelector(".dots"); // selection de la classe ".dots"
   // boucle "for" qui initialise une variable index à 0, puis continue à exécuter le code tant que la valeur index est inférieure à la longueur du tableau slides,
   // en incrémentant index de 1 à chaque itération de la boucle
